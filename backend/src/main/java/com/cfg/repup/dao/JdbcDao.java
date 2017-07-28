@@ -9,15 +9,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Component
-public class JdbcExampleDao implements ExampleDao {
+public class JdbcDao {
 
 	private final JdbcTemplate jdbcTemplate;
 
-	public JdbcExampleDao(JdbcTemplate jdbcTemplate) {
+	public JdbcDao(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-	@Override
 	public Employee getData() {
 		return jdbcTemplate.queryForObject("SELECT first_name, last_name FROM example", new RowMapper<Employee>() {
 			@Override

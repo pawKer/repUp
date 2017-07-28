@@ -10,16 +10,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cfg.repup.dao.JobAssignmentDao;
+import com.cfg.repup.dao.JobDao;
+import com.cfg.repup.dao.UserDao;
 import com.cfg.repup.domain.Employee;
 import com.cfg.repup.domain.JobAssignment;
+import com.cfg.repup.domain.User;
 
 @Controller
-@RequestMapping("/generic")
+
 public class HBController {
 	
 	
 	private final JobAssignmentDao jobAs;
 	
+	@Autowired
+	private UserDao userDao;
 	
 	public HBController(JobAssignmentDao jobAs) {
 		super();
@@ -27,7 +32,7 @@ public class HBController {
 	}
 
 
-	@GetMapping
+	@RequestMapping("/generic")
 	public String getWorker(Model model)
 	{
 		List<JobAssignment> jobList = jobAs.getData();
@@ -42,5 +47,19 @@ public class HBController {
 		
 		return "generic";
 	}
+	
+	@RequestMapping("/leaderboard")
+	public String getRankings(Model model)
+	{
+		List<User> userList = userDao.getHighestRated();
+
+
+		
+		model.addAttribute("users",userList);
+		
+		return "leaderboard";
+	}
+	
+	
 
 }

@@ -3,6 +3,12 @@ INSERT INTO users (user_id, first_name, last_name, mobile_number, card_number, u
      
 INSERT INTO users (user_id, first_name, last_name, mobile_number, card_number, user_rating)
            VALUES (2, 'Mihai', 'Johnston', '123456711', '1456789', 3.5);
+           
+INSERT INTO users (user_id, first_name, last_name, mobile_number, card_number, user_rating)
+           VALUES (3, 'Maxine', 'Johnston', '123456711', '1456789', 5);
+
+INSERT INTO users (user_id, first_name, last_name, mobile_number, card_number, user_rating)
+           VALUES (4, 'Rares', 'Johnston', '123456711', '1456789', 3);
 
 INSERT INTO jobs(job_id, title, description, remuneration, job_owner)
             VALUES (1, 'His homework', '1 day job', '5 pounds', 1)

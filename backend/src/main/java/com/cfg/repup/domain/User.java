@@ -16,7 +16,7 @@ public class User {
         this.lastName = lastName;
         this.mobileNumber = mobileNumber;
         this.cardNumber = cardNumber;
-        this.userRating = 0;
+        this.userRating = userRating;
     }
 
     public int getUser_id() {

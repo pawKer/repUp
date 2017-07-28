@@ -2,7 +2,11 @@ package com.cfg.repup.dao;
 
 import com.cfg.repup.domain.Job;
 
+import java.util.List;
+
 public interface JobDao {
 
-    Job getData();
+    Job getJob(int jobId);
+
+    List<Job> getJobs();
 }

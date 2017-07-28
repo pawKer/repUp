@@ -1,17 +1,17 @@
 package com.cfg.repup.controller;
 
+import com.cfg.repup.dao.UserDao;
 import com.cfg.repup.dao.UserDaoImpl;
 import com.cfg.repup.domain.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
-	private final UserDaoImpl userDaoImpl;
+	private final UserDao userDaoImpl;
 
 	public UserController(UserDaoImpl userDaoImpl) {
 		this.userDaoImpl = userDaoImpl;
@@ -19,7 +19,12 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public User getUser(@PathVariable final int userId) {
-        return userDaoImpl.getData(userId);
+        return userDaoImpl.getUser(userId);
+    }
+
+    @GetMapping
+    public List<User> getUsers() {
+	    return userDaoImpl.getUsers();
     }
 
 }

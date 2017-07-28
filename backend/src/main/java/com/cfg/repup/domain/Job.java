@@ -8,6 +8,10 @@ public class Job {
     private String remuneration;
     private int job_owner;
 
+    public Job() {
+
+    }
+
     public Job(int job_id, String title, String description, String remuneration, int job_owner) {
         this.job_id = job_id;
         this.title = title;

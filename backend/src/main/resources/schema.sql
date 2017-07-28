@@ -39,4 +39,3 @@ CREATE TABLE interests(
 
 
 
-

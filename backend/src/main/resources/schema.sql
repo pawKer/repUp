@@ -1,4 +1,4 @@
-CREATE TABLE users (
+CREATE TABLE users(
   user_id INTEGER PRIMARY KEY,
   first_name VARCHAR(100),
   last_name VARCHAR(100),
@@ -6,7 +6,7 @@ CREATE TABLE users (
   card_number VARCHAR(12),
   user_rating FLOAT);
 
-CREATE TABLE jobs (
+CREATE TABLE jobs(
   job_id INTEGER PRIMARY KEY,
   title VARCHAR(50),
   description VARCHAR(250),

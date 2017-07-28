@@ -4,7 +4,15 @@ public class Employee {
 
 	private String firstName;
 	private String lastName;
-
+	
+	public Employee(String firstname, String lastname)
+	{
+		this.firstName = firstname;
+		this.lastName = lastname;
+	}
+	public Employee()
+	{
+	}
 	public String getFirstName() {
 		return firstName;
 	}

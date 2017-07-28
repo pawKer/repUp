@@ -24,3 +24,22 @@ CREATE TABLE job_assignments(
   FOREIGN KEY (factotum) REFERENCES users(user_id),
   FOREIGN KEY (job_id) REFERENCES jobs(job_id));
 
+CREATE TABLE interests(
+  user_id INTEGER,
+  gardening BOOLEAN,
+  plumbing BOOLEAN,
+  electrician BOOLEAN,
+  carwashing BOOLEAN,
+  housework BOOLEAN,
+  FOREIGN KEY (user_id) REFERENCES user(user_id));
+
+
+
+)
+
+
+
+
+
+
+

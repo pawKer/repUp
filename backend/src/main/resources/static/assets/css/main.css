@@ -8,6 +8,25 @@
 */
 
 /* Reset */
+#one {
+	background-image: none;
+	background-color: #faea5f;
+	border-color: #000000;
+}
+
+#two .more:after {
+	background-image: url("images/arrow.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: '';
+	display: block;
+	height: 1.5em;
+	left: 50%;
+	margin: 0 0 0 -0.75em;
+	position: absolute;
+	width: 1.5em;
+}
 
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
@@ -3815,7 +3834,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #FB6B75;
+  background: #faea5f;
 }
 
 .container {
@@ -3888,7 +3907,7 @@ body {
     left: 0%;
     background-color: rgba(0, 0, 0, 0);
   }
-  
+
   30%,70% {
     width: 8px;
     height: 8px;
@@ -3919,7 +3938,7 @@ body {
     left: 0%;
     background-color: rgba(0, 0, 0, 0);
   }
-  
+
   30%,70% {
     width: 8px;
     height: 8px;
@@ -3928,7 +3947,7 @@ body {
     left: 50%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  
+
   80%,100% {
     width: 4px;
     height: 4px;
@@ -3948,7 +3967,7 @@ body {
     left: 0%;
     background-color: rgba(0, 0, 0, 0);
   }
-  
+
   30%,70% {
     width: 8px;
     height: 8px;
@@ -3957,7 +3976,7 @@ body {
     left: 50%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  
+
   80%,100% {
     width: 4px;
     height: 4px;
@@ -3976,7 +3995,7 @@ body {
     left: 0%;
     background-color: rgba(0, 0, 0, 0);
   }
-  
+
   30%,70% {
     width: 8px;
     height: 8px;
@@ -3984,7 +4003,7 @@ body {
     left: 50%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  
+
   80%,100% {
     width: 4px;
     height: 4px;
@@ -4002,7 +4021,7 @@ body {
     left: 0%;
     background-color: rgba(0, 0, 0, 0);
   }
-  
+
   30%,70% {
     width: 8px;
     height: 8px;
@@ -4010,7 +4029,7 @@ body {
     left: 50%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  
+
   80%,100% {
     width: 4px;
     height: 4px;

@@ -10,8 +10,11 @@ CREATE TABLE jobs(
   job_id INTEGER PRIMARY KEY,
   title VARCHAR(50),
   description VARCHAR(250),
+  date_posted DATETIME,
   remuneration VARCHAR(100),
   job_owner INTEGER,
+  number_of_pending_applications INTEGER,
+  expected_duration INTEGER,
   FOREIGN KEY (job_owner) REFERENCES users(user_id));
 
 CREATE TABLE job_assignments(
@@ -31,13 +34,7 @@ CREATE TABLE interests(
   electrician BOOLEAN,
   carwashing BOOLEAN,
   housework BOOLEAN,
-  FOREIGN KEY (user_id) REFERENCES user(user_id));
-
-
-
-)
-
-
+  FOREIGN KEY (user_id) REFERENCES users(user_id));
 
 
 

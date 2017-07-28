@@ -1,15 +1,17 @@
 package com.cfg.repup.dao;
 
-import com.cfg.repup.domain.Employee;
+import com.cfg.repup.domain.Job;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class JobDaoImpl extends DaoImpl {
+public class JobDaoImpl implements JobDao {
+
+    private final JdbcTemplate jdbcTemplate;
 
     public JobDaoImpl(JdbcTemplate jdbcTemplate) {
-        super(jdbcTemplate);
+        this.jdbcTemplate = jdbcTemplate;
     }
 
-    public Employee getData() {
+    public Job getData() {
         return null;
     }
 }

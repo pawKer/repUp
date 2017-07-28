@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Component
-public class UserDaoImpl {
+public class UserDaoImpl implements UserDao{
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -18,7 +18,7 @@ public class UserDaoImpl {
     }
 
     public User getData(int userId) {
-        return jdbcTemplate.queryForObject("SELECT ? FROM users", new RowMapper<User>() {
+        return jdbcTemplate.queryForObject("SELECT * FROM users WHERE user_id=?", new RowMapper<User>() {
             @Override
             public User mapRow(ResultSet resultSet, int i) throws SQLException {
                 User user = new User(resultSet.getInt("user_id"),

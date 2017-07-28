@@ -31,12 +31,7 @@ CREATE TABLE interests(
   electrician BOOLEAN,
   carwashing BOOLEAN,
   housework BOOLEAN,
-  FOREIGN KEY (user_id) REFERENCES user(user_id));
-
-
-
-)
-
+  FOREIGN KEY (user_id) REFERENCES users(user_id));
 
 
 

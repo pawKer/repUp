@@ -2,13 +2,17 @@ package com.cfg.repup.domain;
 
 public class Job {
 
-    private String job_id;
+    private int job_id;
     private String title;
     private String description;
     private String remuneration;
     private int job_owner;
 
-    public Job(String job_id, String title, String description, String remuneration, int job_owner) {
+    public Job() {
+
+    }
+
+    public Job(int job_id, String title, String description, String remuneration, int job_owner) {
         this.job_id = job_id;
         this.title = title;
         this.description = description;
@@ -17,11 +21,11 @@ public class Job {
     }
 
 
-    public String getJob_id() {
+    public int getJob_id() {
         return job_id;
     }
 
-    public void setJob_id(String job_id) {
+    public void setJob_id(int job_id) {
         this.job_id = job_id;
     }
 

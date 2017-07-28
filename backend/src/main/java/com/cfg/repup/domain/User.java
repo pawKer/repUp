@@ -5,12 +5,12 @@ public class User {
     private int user_id;
     private String firstName;
     private String lastName;
-    private char mobileNumber;
-    private char cardNumber;
+    private String mobileNumber;
+    private String cardNumber;
     private float userRating;
 
 
-    public User(int user_id, String firstName, String lastName, char mobileNumber, char cardNumber, float userRating) {
+    public User(int user_id, String firstName, String lastName, String mobileNumber, String cardNumber, float userRating) {
         this.user_id = user_id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -43,19 +43,19 @@ public class User {
         this.lastName = lastName;
     }
 
-    public char getMobileNumber() {
+    public String getMobileNumber() {
         return mobileNumber;
     }
 
-    public void setMobileNumber(char mobileNumber) {
+    public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
-    public char getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(char cardNumber) {
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 

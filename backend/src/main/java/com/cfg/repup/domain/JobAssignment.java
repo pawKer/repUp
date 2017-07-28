@@ -3,7 +3,7 @@ package com.cfg.repup.domain;
 /**
  * Created by Amine on 28/07/2017.
  */
-public class JobAssignments {
+public class JobAssignment {
 
     private int job_id;
     private int jobOwner;
@@ -11,7 +11,7 @@ public class JobAssignments {
     private boolean complete;
     private int rating;
 
-    public JobAssignments(int job_id, int jobOwner, int factotum, boolean complete, int rating) {
+    public JobAssignment(int job_id, int jobOwner, int factotum, boolean complete, int rating) {
         this.job_id = job_id;
         this.jobOwner = jobOwner;
         this.factotum = factotum;

@@ -4,7 +4,7 @@ CREATE TABLE users (
   last_name VARCHAR(100),
   mobile_number CHAR(11),
   card_number VARCHAR(12),
-  user_rating INTEGER);
+  user_rating FLOAT);
 
 CREATE TABLE jobs (
   job_id INTEGER PRIMARY KEY,

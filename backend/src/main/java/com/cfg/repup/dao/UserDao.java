@@ -8,5 +8,11 @@ public interface UserDao {
 
     User getUser(int userId);
 
+    String getUserProfilePhoto(int userId);
+
     List<User> getUsers();
+
+    void createUser(User newUser);
+
+
 }

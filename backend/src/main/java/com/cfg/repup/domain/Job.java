@@ -1,32 +1,28 @@
 package com.cfg.repup.domain;
 
+import java.util.Date;
+
 public class Job {
 
-    private int job_id;
     private String title;
     private String description;
+    private Date datePosted;
     private String remuneration;
     private int job_owner;
+    private int number_of_pending_applications;
+    private int expected_duration;
 
-    public Job() {
+    private Job(){};
 
-    }
-
-    public Job(int job_id, String title, String description, String remuneration, int job_owner) {
-        this.job_id = job_id;
+    public Job(String title, String description, Date datePosted, String remuneration, int job_owner, int number_of_pending_applications, int expected_duration) {
         this.title = title;
         this.description = description;
+        this.datePosted = datePosted;
         this.remuneration = remuneration;
         this.job_owner = job_owner;
-    }
+        this.number_of_pending_applications = number_of_pending_applications;
+        this.expected_duration = expected_duration;
 
-
-    public int getJob_id() {
-        return job_id;
-    }
-
-    public void setJob_id(int job_id) {
-        this.job_id = job_id;
     }
 
     public String getTitle() {
@@ -59,5 +55,29 @@ public class Job {
 
     public void setJob_owner(int job_owner) {
         this.job_owner = job_owner;
+    }
+
+    public Date getDatePosted() {
+        return datePosted;
+    }
+
+    public void setDatePosted(Date datePosted) {
+        this.datePosted = datePosted;
+    }
+
+    public int getNumber_of_pending_applications() {
+        return number_of_pending_applications;
+    }
+
+    public void setNumber_of_pending_applications(int number_of_pending_applications) {
+        this.number_of_pending_applications = number_of_pending_applications;
+    }
+
+    public int getExpected_duration() {
+        return expected_duration;
+    }
+
+    public void setExpected_duration(int expected_duration) {
+        this.expected_duration = expected_duration;
     }
 }

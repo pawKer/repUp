@@ -36,5 +36,6 @@ public class JobsController {
     @PostMapping
     public void addJob(@RequestBody Job job) {
         LOGGER.info("Received post of {}", job.getJob_owner());
+        jobDao.createJob(job);
     }
 }

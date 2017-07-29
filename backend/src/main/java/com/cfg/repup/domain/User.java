@@ -3,20 +3,24 @@ package com.cfg.repup.domain;
 public class User {
 
     private int user_id;
+    private String user_name;
     private String firstName;
     private String lastName;
     private String mobileNumber;
     private String cardNumber;
     private float userRating;
+    private String path_to_profile_photo;
 
+    public User(){};
 
-    public User(int user_id, String firstName, String lastName, String mobileNumber, String cardNumber, float userRating) {
-        this.user_id = user_id;
+    public User(String user_name, String firstName, String lastName, String mobileNumber, String cardNumber, float userRating, String path_to_profile_photo) {
+        this.user_name = user_name;
         this.firstName = firstName;
         this.lastName = lastName;
         this.mobileNumber = mobileNumber;
         this.cardNumber = cardNumber;
         this.userRating = 0;
+        this.path_to_profile_photo=path_to_profile_photo;
     }
 
     public int getUser_id() {
@@ -25,6 +29,15 @@ public class User {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public String getFirstName() {
@@ -65,5 +78,14 @@ public class User {
 
     public void setUserRating(float userRating) {
         this.userRating = userRating;
+    }
+
+
+    public String getPath_to_profile_photo() {
+        return path_to_profile_photo;
+    }
+
+    public void setPath_to_profile_photo(String path_to_profile_photo) {
+        this.path_to_profile_photo = path_to_profile_photo;
     }
 }

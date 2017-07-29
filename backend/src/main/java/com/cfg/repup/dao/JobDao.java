@@ -9,4 +9,6 @@ public interface JobDao {
     Job getJob(int jobId);
 
     List<Job> getJobs();
+
+    void createJob(Job newJob);
 }

@@ -44,10 +44,27 @@ public class UserDaoImpl implements UserDao{
                         resultSet.getString("mobile_number"),
                         resultSet.getString("card_number"),
                         resultSet.getFloat("user_rating"));
+                		
                 return user;
             }
         });
     }
-
+    
+    @Override
+    public List<User> getHighestRated() {
+        return jdbcTemplate.query("SELECT TOP 20 * FROM users ORDER BY user_rating DESC", new RowMapper<User>() {
+            @Override
+            public User mapRow(ResultSet resultSet, int i) throws SQLException {
+                User user = new User(resultSet.getInt("user_id"),
+                        resultSet.getString("first_name"),
+                        resultSet.getString("last_name"),
+                        resultSet.getString("mobile_number"),
+                        resultSet.getString("card_number"),
+                        resultSet.getFloat("user_rating"));
+                System.out.println("HELOOOOOOOOOOOOOO" + user.getUserRating());
+                return user;
+            }
+        });
+    }
 
 }

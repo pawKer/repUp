@@ -9,4 +9,5 @@ public interface UserDao {
     User getUser(int userId);
 
     List<User> getUsers();
+    List<User> getHighestRated();
 }

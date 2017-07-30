@@ -15,4 +15,5 @@ public interface UserDao {
     void createUser(User newUser);
 
 
+    List<User> getHighestRated();
 }

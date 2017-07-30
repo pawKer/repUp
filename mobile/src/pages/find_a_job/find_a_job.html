@@ -1,0 +1,41 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Find A Job</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cards-bg social-cards">
+
+  <ion-list>
+      <ion-card *ngFor="let item of jobsAvailable" (click)="goToJobDetails(item)">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="{{item.profile}}">
+          </ion-avatar>
+          <h2>{{item.userName}}</h2>
+          <p>{{item.date}}</p>
+        </ion-item>
+
+        <ion-card-content>
+          <p>{{item.description}}</p>
+        </ion-card-content>
+
+        <ion-row>
+          <ion-col align-self-center text-center>
+              {{item.numberOfApplications}} applications
+          </ion-col>
+          <ion-col align-self-center text-center>
+            <ion-note> Estimated time:
+              {{item.expectedDuration}}
+            </ion-note>
+          </ion-col>
+          <ion-col align-self-center text-center>
+            <span>£{{item.interest}}</span>
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+  </ion-list>
+
+</ion-content>

@@ -30,7 +30,7 @@ public class JobDaoImpl implements JobDao {
                         resultSet.getTimestamp("date_posted"),
                         resultSet.getString("remuneration"),
                         resultSet.getInt("job_owner"),
-                        resultSet.getInt("number_of_pending_applications"),
+                        resultSet.getInt("likes"),
                         resultSet.getInt("expected_duration"));
                 return job;
             }
@@ -47,7 +47,7 @@ public class JobDaoImpl implements JobDao {
                         resultSet.getTimestamp("date_posted"),
                         resultSet.getString("remuneration"),
                         resultSet.getInt("job_owner"),
-                        resultSet.getInt("number_of_pending_applications"),
+                        resultSet.getInt("likes"),
                         resultSet.getInt("expected_duration"));
                 return job;
             }
@@ -57,7 +57,7 @@ public class JobDaoImpl implements JobDao {
     @Override
     public void createJob(final Job newJob) {
         jdbcTemplate.update(
-                "INSERT INTO jobs (title, description,date_posted,remuneration, job_owner, number_of_pending_applications, expected_duration) " +
+                "INSERT INTO jobs (title, description,date_posted,remuneration, job_owner, likes, expected_duration) " +
                         "VALUES(?,?,?,?,?,?,?)", new PreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement preparedStatement) throws SQLException {
@@ -66,7 +66,7 @@ public class JobDaoImpl implements JobDao {
                 preparedStatement.setTimestamp(3, new Timestamp(newJob.getDatePosted().getTime()));
                 preparedStatement.setString(4, newJob.getRemuneration());
                 preparedStatement.setInt(5, newJob.getJob_owner());
-                preparedStatement.setInt(6, newJob.getNumber_of_pending_applications());
+                preparedStatement.setInt(6, newJob.getlikes());
                 preparedStatement.setInt(7, newJob.getExpected_duration());
             }});
     }

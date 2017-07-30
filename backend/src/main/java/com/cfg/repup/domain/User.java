@@ -11,7 +11,7 @@ public class User {
     private float userRating;
     private String path_to_profile_photo;
 
-    public User(){};
+    public User(){}
 
     public User(String user_name, String firstName, String lastName, String mobileNumber, String cardNumber, float userRating, String path_to_profile_photo) {
         this.user_name = user_name;
@@ -19,7 +19,7 @@ public class User {
         this.lastName = lastName;
         this.mobileNumber = mobileNumber;
         this.cardNumber = cardNumber;
-        this.userRating = 0;
+        this.userRating = userRating;
         this.path_to_profile_photo=path_to_profile_photo;
     }
 

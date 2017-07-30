@@ -1,16 +1,13 @@
 package com.cfg.repup.dao;
 
-import java.util.List;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import com.cfg.repup.domain.Job;
 import com.cfg.repup.domain.JobAssignment;
-
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Component;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
 
 @Component
 public class JobAssignmentDaoImpl implements JobAssignmentDao{
@@ -38,28 +35,47 @@ public class JobAssignmentDaoImpl implements JobAssignmentDao{
     }
     
     @Override
-    public String getFactotum(Integer id)
+    public String getUsername(int id)
     {
-    	return jdbcTemplate.queryForObject("SELECT first_name FROM users WHERE user_id = " + id, new RowMapper<String>() {
+    	return jdbcTemplate.queryForObject("SELECT user_name FROM users WHERE user_id =?", new RowMapper<String>() {
             @Override
             public String mapRow(ResultSet resultSet, int i) throws SQLException {
-                String name = resultSet.getString("first_name");
-                return name;
+                return resultSet.getString(1);
             }
-        });
+        }, id);
     	
     }
     
     @Override
-    public String getJobTitle(Integer id)
+    public String getJobTitle(int id)
     {
-    	return jdbcTemplate.queryForObject("SELECT title FROM jobs WHERE job_id = " + id, new RowMapper<String>() {
+    	return jdbcTemplate.queryForObject("SELECT title FROM jobs WHERE job_id =?", new RowMapper<String>() {
             @Override
             public String mapRow(ResultSet resultSet, int i) throws SQLException {
                 String name = resultSet.getString("title");
                 return name;
             }
-        });
+        }, id);
     	
+    }
+
+    @Override
+    public boolean getJobComplete(int id) {
+        return jdbcTemplate.queryForObject("SELECT complete FROM job_assignments WHERE job_id=?", new RowMapper<Boolean>() {
+            @Override
+            public Boolean mapRow(ResultSet resultSet, int i) throws SQLException {
+                return resultSet.getBoolean(1);
+            }
+        }, id);
+    }
+
+    @Override
+    public int getJobRating(int id) {
+        return jdbcTemplate.queryForObject("SELECT rating FROM job_assignments WHERE job_id=?", new RowMapper<Integer>() {
+            @Override
+            public Integer mapRow(ResultSet resultSet, int i) throws SQLException {
+                return resultSet.getInt(1);
+            }
+        }, id);
     }
 }

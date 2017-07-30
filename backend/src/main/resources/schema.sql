@@ -15,7 +15,7 @@ CREATE TABLE jobs(
   date_posted DATETIME,
   remuneration VARCHAR(100),
   job_owner INTEGER,
-  number_of_pending_applications INTEGER,
+  likes INTEGER,
   expected_duration INTEGER,
   FOREIGN KEY (job_owner) REFERENCES users(user_id));
 

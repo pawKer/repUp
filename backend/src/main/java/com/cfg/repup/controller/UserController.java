@@ -36,8 +36,8 @@ public class UserController {
     }
 
     @PostMapping("/{userId}/rating")
-    public void updateUserRating(){
-
+    public void updateUserRating(@RequestParam int rating){
+        //TODO:update user rating
     }
 
 

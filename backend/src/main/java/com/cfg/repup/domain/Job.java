@@ -9,18 +9,18 @@ public class Job {
     private Date datePosted;
     private String remuneration;
     private int job_owner;
-    private int number_of_pending_applications;
+    private int likes;
     private int expected_duration;
 
     private Job(){};
 
-    public Job(String title, String description, Date datePosted, String remuneration, int job_owner, int number_of_pending_applications, int expected_duration) {
+    public Job(String title, String description, Date datePosted, String remuneration, int job_owner, int likes, int expected_duration) {
         this.title = title;
         this.description = description;
         this.datePosted = datePosted;
         this.remuneration = remuneration;
         this.job_owner = job_owner;
-        this.number_of_pending_applications = number_of_pending_applications;
+        this.likes = likes;
         this.expected_duration = expected_duration;
 
     }
@@ -65,12 +65,12 @@ public class Job {
         this.datePosted = datePosted;
     }
 
-    public int getNumber_of_pending_applications() {
-        return number_of_pending_applications;
+    public int getlikes() {
+        return likes;
     }
 
-    public void setNumber_of_pending_applications(int number_of_pending_applications) {
-        this.number_of_pending_applications = number_of_pending_applications;
+    public void setlikes(int likes) {
+        this.likes = likes;
     }
 
     public int getExpected_duration() {

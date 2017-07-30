@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -38,4 +39,32 @@ public class JobsController {
         LOGGER.info("Received post of {}", job.getJob_owner());
         jobDao.createJob(job);
     }
+
+    //TODO:like job
+    @PostMapping("/{jobId}/like")
+    public void likeJob(
+            @PathVariable final int jobId,
+            @RequestHeader(value="userId") @NotNull final int userId){
+
+    }
+
+
+
+    //TODO:apply for job
+    @PostMapping("/{jobId}/apply")
+    public void applyForJob(
+            @PathVariable final int jobId,
+            @RequestHeader(value="timestamp") @NotNull final long timestamp,
+            @RequestHeader(value="userId") @NotNull final int userId) {
+        System.out.print("Success! " + Long.toString(timestamp) + " " + Integer.toString(userId));
+    }
+
+    //TODO:complete job
+    @PostMapping("/{jobId}/complete")
+    public void completeJob(
+            @PathVariable final int jobId,
+            @RequestHeader(value="userId") @NotNull final int userId){
+        System.out.println("Success! " + Integer.toString(jobId));
+    }
+
 }

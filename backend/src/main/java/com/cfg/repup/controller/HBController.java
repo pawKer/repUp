@@ -1,59 +1,69 @@
 package com.cfg.repup.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.cfg.repup.dao.JobAssignmentDao;
+import com.cfg.repup.dao.UserDao;
+import com.cfg.repup.domain.JobAssignment;
+import com.cfg.repup.domain.UserRating;
+import com.cfg.repup.models.Tracking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cfg.repup.dao.JobAssignmentDao;
-import com.cfg.repup.dao.JobDao;
-import com.cfg.repup.dao.UserDao;
-import com.cfg.repup.domain.Employee;
-import com.cfg.repup.domain.JobAssignment;
-import com.cfg.repup.domain.User;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
-
 public class HBController {
-
-
-	private final JobAssignmentDao jobAs;
 
 	@Autowired
 	private UserDao userDao;
 
-	public HBController(JobAssignmentDao jobAs) {
-		super();
-		this.jobAs = jobAs;
+	@Autowired
+	private JobAssignmentDao jobAssignmentDao;
+
+	public HBController() {
 	}
 
 
-	@RequestMapping("/generic")
-	public String getWorker(Model model)
+	@RequestMapping("/applications")
+	public String getApplications(Model model){
+
+		//TODO: returns applications that have been submitted
+
+		return "applications";
+	}
+
+
+
+	@RequestMapping("/tracking")
+	public String getTracking(Model model)
 	{
-		List<JobAssignment> jobList = jobAs.getData();
-		List<Employee> jobDoers = new ArrayList<Employee>();
+		List<JobAssignment> jobList = jobAssignmentDao.getData();
+
+		List<Tracking> trackingList = new ArrayList<Tracking>();
 		for (JobAssignment job : jobList)
 		{
-			jobDoers.add(new Employee(jobAs.getFactotum(job.getFactotum()), jobAs.getJobTitle(job.getJob_id())));
+			Tracking trackingObject = new Tracking(
+					userDao.getUser(job.getFactotum()).getUser_name(),
+					userDao.getUserProfilePhoto(job.getFactotum()),
+					jobAssignmentDao.getJobComplete(job.getJob_id()),
+					jobAssignmentDao.getJobRating(job.getJob_id()));
+
+			trackingList.add(trackingObject);
+			System.out.println(userDao.getUserProfilePhoto(job.getFactotum()));
 		}
 
 
-		model.addAttribute("jobs",jobDoers);
+		model.addAttribute("jobs",trackingList);
 
-		return "generic";
+		return "tracking";
 	}
 
 	@RequestMapping("/leaderboard")
 	public String getRankings(Model model)
 	{
-		List<User> userList = userDao.getHighestRated();
-
-
+		List<UserRating> userList = userDao.getHighestRated();
 
 		model.addAttribute("users",userList);
 

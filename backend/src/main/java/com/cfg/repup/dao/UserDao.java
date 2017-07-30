@@ -1,6 +1,7 @@
 package com.cfg.repup.dao;
 
 import com.cfg.repup.domain.User;
+import com.cfg.repup.domain.UserRating;
 
 import java.util.List;
 
@@ -14,6 +15,5 @@ public interface UserDao {
 
     void createUser(User newUser);
 
-
-    List<User> getHighestRated();
+    List<UserRating> getHighestRated();
 }

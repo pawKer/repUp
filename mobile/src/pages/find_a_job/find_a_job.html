@@ -8,10 +8,10 @@
 <ion-content class="cards-bg social-cards">
 
   <ion-list>
-      <ion-card *ngFor="let item of jobsAvailable" (click)="goToJobDetails(item)">
+      <ion-card *ngFor="let item of jobsAvailable" (click)="applyForJob(item)">
         <ion-item>
           <ion-avatar item-start>
-            <img src="{{item.job_owner_User ? item.job_owner_User.path_to_profile_photo : ''}}">
+            <img src="http://repup.herokuapp.com/{{item.job_owner_User ? item.job_owner_User.path_to_profile_photo: 'icons/1.png'}}">
           </ion-avatar>
           <h2>{{item.job_owner_User ? item.job_owner_User.user_name : ''}}</h2>
           <p>{{item.datePosted}}</p>

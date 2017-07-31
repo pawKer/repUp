@@ -19,20 +19,20 @@ INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number,
 INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)
            VALUES ('rawker', 'Rares', 'Johnston', '123456711', '1456789', 3, 'icons/1.png');
 
-INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_duration)
-VALUES ('Gardener', 'Need a gardener to help with clear out of my overgrown backyard', '£10 per hour', 1, 3, 2);
+INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_duration, categories, charities)
+VALUES ('Gardener', 'Need a gardener to help with clear out of my overgrown backyard', '£10 per hour', 1, 3, 2, 'gardening, manual labour', 'urban roots');
 
-INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_duration)
-VALUES ('Painter', 'Painting the new community centre', '£100 for the whole job', 2, 0, 1);
+INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_duration, categories, charities)
+VALUES ('Painter', 'Painting the new community centre', '£100 for the whole job', 2, 0, 1, 'Decorating','Red Cross');
 
-INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_duration)
-VALUES ('Cleaning', 'Cleaner wanted for the holidays', '£20 per day', 3, 1,5);
+INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_duration, categories, charities)
+VALUES ('Cleaning', 'Cleaner wanted for the holidays', '£20 per day', 3, 1,5, 'Housework', 'Oxfam');
 
-INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_duration)
-            VALUES ('His homework', '1 day job', '5 pounds', 1, 6, 4);
+INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_duration, categories, charities)
+            VALUES ('His homework', '1 day job', '5 pounds', 1, 6, 4, 'Schoolwork','charity');
 
-INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_duration)
-            VALUES ('Gardening', '1 day job', '5 pounds', 2, 10, 3);
+INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_duration, categories, charities)
+            VALUES ('Gardening', '1 day job', '5 pounds', 2, 10, 3, 'Gardening','Gardening4Us');
 
 INSERT INTO job_assignments(job_id, factotum, complete, rating)
             VALUES (1, 1, True, 5);

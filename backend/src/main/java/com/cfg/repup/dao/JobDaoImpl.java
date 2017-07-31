@@ -31,7 +31,9 @@ public class JobDaoImpl implements JobDao {
                         resultSet.getString("remuneration"),
                         resultSet.getInt("job_owner"),
                         resultSet.getInt("likes"),
-                        resultSet.getInt("expected_duration"));
+                        resultSet.getInt("expected_duration"),
+                        resultSet.getString("categories"),
+                        resultSet.getString("charities"));
                 return job;
             }
         }, jobId);
@@ -48,26 +50,30 @@ public class JobDaoImpl implements JobDao {
                         resultSet.getString("remuneration"),
                         resultSet.getInt("job_owner"),
                         resultSet.getInt("likes"),
-                        resultSet.getInt("expected_duration"));
+                        resultSet.getInt("expected_duration"),
+                        resultSet.getString("categories"),
+                        resultSet.getString("charities"));
                 return job;
             }
         });
     }
 
     @Override
-    public void createJob(final Job newJob) {
+    public void createJob(final Job newJob, int userId) {
         jdbcTemplate.update(
-                "INSERT INTO jobs (title, description,date_posted,remuneration, job_owner, likes, expected_duration) " +
-                        "VALUES(?,?,?,?,?,?,?)", new PreparedStatementSetter() {
+                "INSERT INTO jobs (title, description, remuneration, date_posted, job_owner, likes, expected_duration, categories, charities) " +
+                        "VALUES(?,?,?,?,?,?,?,?,?)", new PreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement preparedStatement) throws SQLException {
                 preparedStatement.setString(1, newJob.getTitle());
                 preparedStatement.setString(2, newJob.getDescription());
-                preparedStatement.setTimestamp(3, new Timestamp(newJob.getDatePosted().getTime()));
-                preparedStatement.setString(4, newJob.getRemuneration());
+                preparedStatement.setString(3, newJob.getRemuneration());
+                preparedStatement.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
                 preparedStatement.setInt(5, newJob.getJob_owner());
                 preparedStatement.setInt(6, newJob.getlikes());
                 preparedStatement.setInt(7, newJob.getExpected_duration());
+                preparedStatement.setString(8, newJob.getCategory());
+                preparedStatement.setString(9, newJob.getCharity());
             }});
     }
 

@@ -11,10 +11,10 @@
       <ion-card *ngFor="let item of jobsAvailable" (click)="goToJobDetails(item)">
         <ion-item>
           <ion-avatar item-start>
-            <img src="{{item.profile}}">
+            <img src="{{item.job_owner_User ? item.job_owner_User.path_to_profile_photo : ''}}">
           </ion-avatar>
-          <h2>{{item.userName}}</h2>
-          <p>{{item.date}}</p>
+          <h2>{{item.job_owner_User ? item.job_owner_User.user_name : ''}}</h2>
+          <p>{{item.datePosted}}</p>
         </ion-item>
 
         <ion-card-content>
@@ -23,15 +23,15 @@
 
         <ion-row>
           <ion-col align-self-center text-center>
-              {{item.numberOfApplications}} applications
+              {{item.likes}} applications
           </ion-col>
           <ion-col align-self-center text-center>
             <ion-note> Estimated time:
-              {{item.expectedDuration}}
+              {{item.expected_duration}} hours
             </ion-note>
           </ion-col>
           <ion-col align-self-center text-center>
-            <span>£{{item.interest}}</span>
+            <span>{{item.remuneration}}</span>
           </ion-col>
         </ion-row>
 

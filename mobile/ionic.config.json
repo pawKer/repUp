@@ -1,5 +1,11 @@
 {
   "name": "RepUp",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/jobs",
+      "proxyUrl": "http://repup.herokuapp.com/jobs"
+    }
+  ]
 }

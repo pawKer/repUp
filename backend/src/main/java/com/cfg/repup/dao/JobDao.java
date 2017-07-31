@@ -11,4 +11,6 @@ public interface JobDao {
     List<Job> getJobs();
 
     void createJob(Job newJob);
+
+    void assignJob(int jobId, int userId);
 }

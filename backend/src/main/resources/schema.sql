@@ -21,7 +21,6 @@ CREATE TABLE jobs(
 
 CREATE TABLE job_assignments(
   job_id INTEGER,
-  job_owner INTEGER,
   factotum INTEGER,
   complete BOOLEAN,
   rating INTEGER,

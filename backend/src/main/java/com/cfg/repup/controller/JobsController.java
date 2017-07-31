@@ -54,9 +54,8 @@ public class JobsController {
     @PostMapping("/{jobId}/apply")
     public void applyForJob(
             @PathVariable final int jobId,
-            @RequestHeader(value="timestamp") @NotNull final long timestamp,
             @RequestHeader(value="userId") @NotNull final int userId) {
-        System.out.print("Success! " + Long.toString(timestamp) + " " + Integer.toString(userId));
+        jobDao.assignJob(jobId, userId);
     }
 
     //TODO:complete job

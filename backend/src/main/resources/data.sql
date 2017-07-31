@@ -34,11 +34,11 @@ INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_du
 INSERT INTO jobs(title, description, remuneration, job_owner, likes, expected_duration)
             VALUES ('Gardening', '1 day job', '5 pounds', 2, 10, 3);
 
-INSERT INTO job_assignments(job_id, job_owner, factotum, complete, rating)
-            VALUES (1, 1, 1, True, 5);
+INSERT INTO job_assignments(job_id, factotum, complete, rating)
+            VALUES (1, 1, True, 5);
 
-INSERT INTO job_assignments(job_id, job_owner, factotum, complete, rating)
-            VALUES (2, 2, 2, True, 5);
+INSERT INTO job_assignments(job_id, factotum, complete, rating)
+            VALUES (2, 2, True, 5);
 
-INSERT INTO job_assignments(job_id, job_owner, factotum, complete, rating)
-VALUES (3, 4, 1, False, 0);
+INSERT INTO job_assignments(job_id, factotum, complete, rating)
+VALUES (3, 1, False, 0);

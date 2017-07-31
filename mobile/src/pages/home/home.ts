@@ -15,41 +15,16 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public http: Http) {
     var url = 'http://repup.herokuapp.com/jobs';
-    var response = this.http.get(url).map(res => res.json());
-    this.jobs = response;
-    //this.http.get('https://www.reddit.com/r/gifs/new/.json?limit=10').map(res => res.json()).subscribe(data => {
-    //    this.jobs = data;
-    //});
+    var response = this.http.get(url).map(res => res.json()).subscribe(
+      data => {
+        this.jobs = data;
+      }
+    );
   }
 
   openFindAJobPage() {
-    this.jobs.subscribe(val =>
-      {
-
-      this.navCtrl.push(FindAJobPage, {
-        jobsAvailable: [
-          {
-            profile: "assets/img/avatar-frodo.jpg",
-            userName: "Mohammed",
-            date: "28/07/2017",
-            interest: "12",
-            description: "I want someone to wash the dishes in my kitchen. PS: Haven't washed anything for 2 weeks",
-            numberOfApplications: "23",
-            expectedDuration: "2h"
-          },
-          {
-            profile: "assets/img/avatar-gollum.jpg",
-            userName: "Mihai",
-            date: "28/07/2017",
-            interest: "10",
-            description: "I want someone to wash my car",
-            numberOfApplications: "3",
-            expectedDuration: "0.5h"
-          }
-        ]
-      })
-      }
-    );
+    let jobsList = {jobsAvailable: this.jobs};
+    this.navCtrl.push(FindAJobPage, jobsList);
   }
 
   openPostAJobPage() {

@@ -7,5 +7,46 @@
 </ion-header>
 
 <ion-content padding>
-  Post A Job
+  <form (ngSubmit)="submitJob()">
+    <ion-list>
+      <ion-item>
+        <ion-input [(ngModel)]="job.jobTitle" name="jobTitle" type="text" placeholder="Job Title"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="number" [(ngModel)]="job.pay" name="pay" placeholder="Pay per hour"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Categories</ion-label>
+        <ion-select [(ngModel)]="job.categories" multiple="true" name="categories">
+          <ion-option>Gardening</ion-option>
+          <ion-option>Housing</ion-option>
+          <ion-option>Landscaping</ion-option>
+          <ion-option>Cleaning</ion-option>
+          <ion-option>Delivery</ion-option>
+          <ion-option>Dog Walking</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Charities Affiliated</ion-label>
+        <ion-select [(ngModel)]="job.charities" multiple="true" name="charities">
+          <ion-option>Oxfam</ion-option>
+          <ion-option>Cancer Research UK</ion-option>
+          <ion-option>British Heart Foundation</ion-option>
+          <ion-option>Salvation Army</ion-option>
+          <ion-option>The Samaritans</ion-option>
+          <ion-option>Royal Commonwealth Society For The Blind</ion-option>
+          <ion-option>The British Red Cross Society</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-textarea placeholder="Job Description" [(ngModel)]="job.description" name="description"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" block>Add Job</button>
+    </ion-list>
+  </form>
+
 </ion-content>

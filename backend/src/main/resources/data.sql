@@ -2,7 +2,7 @@ INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number,
            VALUES ('craigy', 'Craig', 'Johnston', '12345678911', '123456789', 0, 'icons/1.png');
 
 INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)
-           VALUES ('mj', 'Mihai', 'Johnston', '123456711', '1456789', 0, 'icons/1.png');
+           VALUES ('mj', 'Mihai', 'Johnston', '123456711', '1456789', 3.4, 'icons/1.png');
 
 INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)
            VALUES ('maxineyo', 'Maxine', 'Johnston', '123456711', '1456789', 5, 'icons/3.png');
@@ -42,3 +42,6 @@ INSERT INTO job_assignments(job_id, factotum, complete, rating)
 
 INSERT INTO job_assignments(job_id, factotum, complete, rating)
 VALUES (2, 3, False, 0);
+
+INSERT INTO job_assignments(job_id, factotum, complete, rating)
+VALUES (3, 1, False, 0);

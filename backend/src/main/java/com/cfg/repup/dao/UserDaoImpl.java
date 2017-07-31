@@ -34,7 +34,7 @@ public class UserDaoImpl implements UserDao{
                         resultSet.getString("mobile_number"),
                         resultSet.getString("card_number"),
                         resultSet.getFloat("user_rating"),
-                        resultSet.getString("path_to_profile_photo"));
+                        resultSet.getString("path_to_profile_photo"), resultSet.getInt("user_id"));
                 return user;
             }
         }, userId);
@@ -52,7 +52,7 @@ public class UserDaoImpl implements UserDao{
                         resultSet.getString("mobile_number"),
                         resultSet.getString("card_number"),
                         resultSet.getFloat("user_rating"),
-                        resultSet.getString("path_to_profile_photo"));
+                        resultSet.getString("path_to_profile_photo"), resultSet.getInt("user_id"));
                 return user;
             }
         });
@@ -87,7 +87,7 @@ public class UserDaoImpl implements UserDao{
                         resultSet.getString("mobile_number"),
                         resultSet.getString("card_number"),
                         resultSet.getFloat("user_rating"),
-                        resultSet.getString("path_to_profile_photo"));
+                        resultSet.getString("path_to_profile_photo"), resultSet.getInt("user_id"));
                 System.out.println("HELOOOOOOOOOOOOOO" + user.getUserRating());
                 return user;
             }

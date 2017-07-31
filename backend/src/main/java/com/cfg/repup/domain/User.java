@@ -13,7 +13,8 @@ public class User {
 
     public User(){}
 
-    public User(String user_name, String firstName, String lastName, String mobileNumber, String cardNumber, float userRating, String path_to_profile_photo) {
+    public User(String user_name, String firstName, String lastName, String mobileNumber, String cardNumber, float userRating, String path_to_profile_photo, int user_id) {
+        this.user_id=user_id;
         this.user_name = user_name;
         this.firstName = firstName;
         this.lastName = lastName;

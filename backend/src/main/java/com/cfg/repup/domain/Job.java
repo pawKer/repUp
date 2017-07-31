@@ -12,12 +12,29 @@ public class Job {
     private int job_owner;
     private int likes;
     private int expected_duration;
-    private List category;
-    private List charity;
+    private String category;
+    private String charity;
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getCharity() {
+        return charity;
+    }
+
+    public void setCharity(String charity) {
+        this.charity = charity;
+    }
 
     private Job(){};
 
-    public Job(String title, String description, Date datePosted, String remuneration, int job_owner, int likes, int expected_duration) {
+    public Job(String title, String description, Date datePosted, String remuneration,
+               int job_owner, int likes, int expected_duration, String category, String charity) {
         this.title = title;
         this.description = description;
         this.datePosted = datePosted;
@@ -25,7 +42,8 @@ public class Job {
         this.job_owner = job_owner;
         this.likes = likes;
         this.expected_duration = expected_duration;
-
+        this.category=category;
+        this.charity=charity;
     }
 
     public String getTitle() {

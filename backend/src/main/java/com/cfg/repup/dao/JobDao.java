@@ -10,5 +10,5 @@ public interface JobDao {
 
     List<Job> getJobs();
 
-    void createJob(Job newJob);
+    void createJob(Job newJob, int userId);
 }

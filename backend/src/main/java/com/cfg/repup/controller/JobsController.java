@@ -35,9 +35,12 @@ public class JobsController {
     }
 
     @PostMapping
-    public void addJob(@RequestBody Job job) {
+    public void addJob(
+            @RequestBody Job job,
+            @RequestHeader(value="userId") @NotNull final int userId) {
         LOGGER.info("Received post of {}", job.getJob_owner());
-        jobDao.createJob(job);
+        jobDao.createJob(job, userId);
+
     }
 
     //TODO:like job

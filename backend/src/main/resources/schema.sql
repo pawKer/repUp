@@ -17,6 +17,8 @@ CREATE TABLE jobs(
   job_owner INTEGER,
   likes INTEGER,
   expected_duration INTEGER,
+  categories VARCHAR(100),
+  charities VARCHAR(100),
   FOREIGN KEY (job_owner) REFERENCES users(user_id));
 
 CREATE TABLE job_assignments(

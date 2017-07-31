@@ -55,12 +55,12 @@
  								<hr>
  								{{#each jobs}}
  								<div class="row">
- 								    <div class="col-4" style="text-align:center">
+ 								    <div class="col-4" style="width:25%">
  										<img src="{{profilePhoto}}" width="30%" height="30%" style="text-align: center"/>
- 										<h3 style="width:200px;height:50%;overflow-wrap:break-word;">{{userName}}</h3>
+ 										<h3 style="width:200px;height:50%;overflow-wrap:break-word;">{{userName}} <i>is doing</i></h3>
  									</div>
- 									<div class="col-4">
-										<p>is doing</p>
+ 									<div class="col-4" style="width:50%">
+										
  										<div class="container">
 								  			<div class="loader">
 								    			<div class="circle">&nbsp;</div>
@@ -71,9 +71,9 @@
 
 										</div>
 									</div>
-									<div class="col-4">
+									<div class="col-4" style=":width:25%">
 										<br>
-										{{jobName}}
+										<h3 style="text-align:right">{{jobName}}</h3>
 									</div>
 
  								<!-- <h3> ............................................</h3> -->

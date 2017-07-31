@@ -1,26 +1,11 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+Team 14's Code For Good: 2017 Intern Edition Project
 
-## How to use this template
+The aim of the project is to tackle the [UN Sustainable Development goals](http://www.un.org/sustainabledevelopment/sustainable-development-goals/). 
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+We have created a platform for allowing people who are unemployed, and have difficulty finding work due to lack of experience, to build up their reputation and skillset by doing charity-sponsored voluntary work.
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+People who are looking for work to be done can post jobs to the platform, which can be viewed by prospective workers.
 
-### With the Ionic CLI:
+The diagram shows the software architecture of the project:
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
-
-Then, to run it, cd into `myBlank` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+![alt text](https://raw.githubusercontent.com/pawKer/repUp/master/codeforgoodarchitecture.png)

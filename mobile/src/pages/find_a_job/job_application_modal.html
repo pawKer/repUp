@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Apply For Job
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      {{job.title}}
+    </ion-item>
+    <ion-item>
+      {{job.description}}
+    </ion-item>
+    <ion-item>
+      {{job.remuneration}}
+    </ion-item>
+    <ion-item>
+      {{job.expected_duration}}
+    </ion-item>
+    <ion-item>
+      <button ion-button block (click)="sendJobApplication()">Apply For Job</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

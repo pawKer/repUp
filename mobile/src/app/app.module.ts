@@ -10,6 +10,7 @@ import { FindAJobPage } from '../pages/find_a_job/find_a_job';
 import { PostAJobPage } from '../pages/post_a_job/post_a_job';
 import { HttpModule } from '@angular/http';
 import { JobDetailsPage } from '../pages/job_details/job_details';
+import { Application } from '../pages/find_a_job/application';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { JobDetailsPage } from '../pages/job_details/job_details';
     HomePage,
     FindAJobPage,
     PostAJobPage,
-    JobDetailsPage
+    JobDetailsPage,
+    Application
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { JobDetailsPage } from '../pages/job_details/job_details';
     HomePage,
     FindAJobPage,
     PostAJobPage,
-    JobDetailsPage
+    JobDetailsPage,
+    Application
   ],
   providers: [
     StatusBar,

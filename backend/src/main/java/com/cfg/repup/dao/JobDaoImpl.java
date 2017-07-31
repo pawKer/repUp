@@ -1,6 +1,7 @@
 package com.cfg.repup.dao;
 
 import com.cfg.repup.domain.Job;
+import com.cfg.repup.domain.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
@@ -33,7 +34,8 @@ public class JobDaoImpl implements JobDao {
                         resultSet.getInt("likes"),
                         resultSet.getInt("expected_duration"),
                         resultSet.getString("categories"),
-                        resultSet.getString("charities"));
+                        resultSet.getString("charities"),
+                        null);
                 return job;
             }
         }, jobId);
@@ -41,9 +43,19 @@ public class JobDaoImpl implements JobDao {
 
     @Override
     public List<Job> getJobs() {
-        return jdbcTemplate.query("SELECT * FROM jobs", new RowMapper<Job>() {
+        return jdbcTemplate.query("SELECT * FROM jobs j LEFT JOIN users u ON u.user_id=j.job_owner", new RowMapper<Job>() {
             @Override
             public Job mapRow(ResultSet resultSet, int i) throws SQLException {
+                User user = new User(
+                        resultSet.getString("user_name"),
+                        resultSet.getString("first_name"),
+                        resultSet.getString("last_name"),
+                        resultSet.getString("mobile_number"),
+                        resultSet.getString("card_number"),
+                        resultSet.getFloat("user_rating"),
+                        resultSet.getString("path_to_profile_photo"),
+                        resultSet.getInt("user_id"));
+
                 Job job = new Job(resultSet.getString("title"),
                         resultSet.getString("description"),
                         resultSet.getTimestamp("date_posted"),
@@ -52,7 +64,8 @@ public class JobDaoImpl implements JobDao {
                         resultSet.getInt("likes"),
                         resultSet.getInt("expected_duration"),
                         resultSet.getString("categories"),
-                        resultSet.getString("charities"));
+                        resultSet.getString("charities"),
+                        user);
                 return job;
             }
         });

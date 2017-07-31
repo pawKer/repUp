@@ -55,26 +55,25 @@
  								<hr>
  								{{#each jobs}}
  								<div class="row">
- 								    <div class="col-3">
- 										<img src="{{profilePhoto}}" width="30%" height="30%"/>
+ 								    <div class="col-4" style="text-align:center">
+ 										<img src="{{profilePhoto}}" width="30%" height="30%" style="text-align: center"/>
  										<h3 style="width:200px;height:50%;overflow-wrap:break-word;">{{userName}}</h3>
  									</div>
- 									<div class="col-3">
+ 									<div class="col-4">
+										<p>is doing</p>
  										<div class="container">
 								  			<div class="loader">
 								    			<div class="circle">&nbsp;</div>
 								    			<div class="circle">&nbsp;</div>
-								    			<div class="circle">&nbsp;</div>
+												<div class="circle">&nbsp;</div>
 								    			<div class="circle">&nbsp;</div>
 								  			</div>
 
 										</div>
 									</div>
-									<div class="col-3">
-										{{complete}}
-									</div>
-									<div class="col-3">
-										{{rating}}
+									<div class="col-4">
+										<br>
+										{{jobName}}
 									</div>
 
  								<!-- <h3> ............................................</h3> -->

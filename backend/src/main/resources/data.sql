@@ -2,19 +2,19 @@ INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number,
            VALUES ('craigy', 'Craig', 'Johnston', '12345678911', '123456789', 4, 'icons/1.png');
 
 INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)
-           VALUES ('mj', 'Mihai', 'Johnston', '123456711', '1456789', 3.5, 'icons/1.png');
+           VALUES ('mj', 'Mihai', 'Johnston', '123456711', '1456789', 3.5, 'icons/2.png');
 
 INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)
-           VALUES ('maxineyo', 'Maxine', 'Johnston', '123456711', '1456789', 5, 'icons/1.png');
+           VALUES ('maxineyo', 'Maxine', 'Johnston', '123456711', '1456789', 5, 'icons/3.png');
 
 INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)
-           VALUES ('mike','Michael', 'Ahari', '12345678911', '123456789', 3.4, 'icons/1.png');
+           VALUES ('mike','Michael', 'Ahari', '12345678911', '123456789', 3.4, 'icons/4.png');
 
 INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)
-           VALUES ('js_guy', 'John', 'Smith', '12345678911', '123456789', 4.1, 'icons/1.png');
+           VALUES ('js_guy', 'John', 'Smith', '12345678911', '123456789', 4.1, 'icons/5.png');
 
 INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)
-           VALUES ('MrJoeBloggs','Joe', 'Bloggs', '12345678911', '123456789', 3.8, 'icons/1.png');
+           VALUES ('MrJoeBloggs','Joe', 'Bloggs', '12345678911', '123456789', 3.8, 'icons/2.png');
 
 INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)
            VALUES ('rawker', 'Rares', 'Johnston', '123456711', '1456789', 3, 'icons/1.png');

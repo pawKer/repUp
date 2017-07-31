@@ -1,6 +1,7 @@
 package com.cfg.repup.controller;
 
 import com.cfg.repup.dao.JobAssignmentDao;
+import com.cfg.repup.dao.JobDao;
 import com.cfg.repup.dao.UserDao;
 import com.cfg.repup.domain.JobAssignment;
 import com.cfg.repup.domain.UserRating;
@@ -21,6 +22,9 @@ public class HBController {
 
 	@Autowired
 	private JobAssignmentDao jobAssignmentDao;
+
+	@Autowired
+	private JobDao jobDao;
 
 	public HBController() {
 	}
@@ -48,7 +52,8 @@ public class HBController {
 					userDao.getUser(job.getFactotum()).getUser_name(),
 					userDao.getUserProfilePhoto(job.getFactotum()),
 					jobAssignmentDao.getJobComplete(job.getJob_id()),
-					jobAssignmentDao.getJobRating(job.getJob_id()));
+					jobAssignmentDao.getJobRating(job.getJob_id()),
+					jobDao.getJob(job.getJob_id()).getTitle());
 
 			trackingList.add(trackingObject);
 			System.out.println(userDao.getUserProfilePhoto(job.getFactotum()));

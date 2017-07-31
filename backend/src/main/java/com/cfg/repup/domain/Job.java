@@ -15,6 +15,16 @@ public class Job {
     private String category;
     private String charity;
 
+    public User getJob_owner_User() {
+        return job_owner_User;
+    }
+
+    public void setJob_owner_User(User job_owner_User) {
+        this.job_owner_User = job_owner_User;
+    }
+
+    private User job_owner_User;
+
     public String getCategory() {
         return category;
     }
@@ -34,7 +44,8 @@ public class Job {
     private Job(){};
 
     public Job(String title, String description, Date datePosted, String remuneration,
-               int job_owner, int likes, int expected_duration, String category, String charity) {
+               int job_owner, int likes, int expected_duration, String category, String charity,
+               User user) {
         this.title = title;
         this.description = description;
         this.datePosted = datePosted;
@@ -44,6 +55,7 @@ public class Job {
         this.expected_duration = expected_duration;
         this.category=category;
         this.charity=charity;
+        this.job_owner_User=user;
     }
 
     public String getTitle() {

@@ -89,4 +89,18 @@ public class JobDaoImpl implements JobDao {
                 preparedStatement.setString(9, newJob.getCharity());
             }});
     }
+
+    @Override
+    public void assignJob(final int jobId, final int userId) {
+        jdbcTemplate.update(
+                "INSERT INTO job_assignments(job_id, factotum, complete, rating" +
+                        "VALUES(?, ?, ?, ?, ?)", new PreparedStatementSetter() {
+                    @Override
+                    public void setValues(PreparedStatement preparedStatement) throws SQLException {
+                        preparedStatement.setInt(1, jobId);
+                        preparedStatement.setInt(3, userId);
+                        preparedStatement.setBoolean(4, false);
+                        preparedStatement.setInt(5, 0);
+                    }});
+    }
 }

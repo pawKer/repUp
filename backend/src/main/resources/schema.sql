@@ -23,11 +23,9 @@ CREATE TABLE jobs(
 
 CREATE TABLE job_assignments(
   job_id INTEGER,
-  job_owner INTEGER,
   factotum INTEGER,
   complete BOOLEAN,
   rating INTEGER,
-  FOREIGN KEY (job_owner) REFERENCES users(user_id),
   FOREIGN KEY (factotum) REFERENCES users(user_id),
   FOREIGN KEY (job_id) REFERENCES jobs(job_id));
 

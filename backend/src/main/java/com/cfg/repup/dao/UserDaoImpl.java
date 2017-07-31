@@ -34,7 +34,7 @@ public class UserDaoImpl implements UserDao{
                         resultSet.getString("mobile_number"),
                         resultSet.getString("card_number"),
                         resultSet.getFloat("user_rating"),
-                        resultSet.getString("path_to_profile_photo"));
+                        resultSet.getString("path_to_profile_photo"), resultSet.getInt("user_id"));
                 return user;
             }
         }, userId);
@@ -52,7 +52,7 @@ public class UserDaoImpl implements UserDao{
                         resultSet.getString("mobile_number"),
                         resultSet.getString("card_number"),
                         resultSet.getFloat("user_rating"),
-                        resultSet.getString("path_to_profile_photo"));
+                        resultSet.getString("path_to_profile_photo"), resultSet.getInt("user_id"));
                 return user;
             }
         });
@@ -61,7 +61,7 @@ public class UserDaoImpl implements UserDao{
     @Override
     public void createUser(final User newUser) {
         jdbcTemplate.update(
-                "INSERT INTO jobs (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)" +
+                "INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)" +
                         "VALUES(?,?,?,?,?,?,?)", new PreparedStatementSetter() {
                     @Override
                     public void setValues(PreparedStatement preparedStatement) throws SQLException {
@@ -87,7 +87,7 @@ public class UserDaoImpl implements UserDao{
                         resultSet.getString("mobile_number"),
                         resultSet.getString("card_number"),
                         resultSet.getFloat("user_rating"),
-                        resultSet.getString("path_to_profile_photo"));
+                        resultSet.getString("path_to_profile_photo"), resultSet.getInt("user_id"));
                 System.out.println("HELOOOOOOOOOOOOOO" + user.getUserRating());
                 return user;
             }

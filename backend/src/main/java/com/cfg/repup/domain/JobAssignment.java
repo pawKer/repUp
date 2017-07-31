@@ -11,9 +11,8 @@ public class JobAssignment {
     private boolean complete;
     private int rating;
 
-    public JobAssignment(int job_id, int jobOwner, int factotum, boolean complete, int rating) {
+    public JobAssignment(int job_id, int factotum, boolean complete, int rating) {
         this.job_id = job_id;
-        this.jobOwner = jobOwner;
         this.factotum = factotum;
         this.complete = complete;
         this.rating = rating;
@@ -25,14 +24,6 @@ public class JobAssignment {
 
     public void setJob_id(int job_id) {
         this.job_id = job_id;
-    }
-
-    public int getJobOwner() {
-        return jobOwner;
-    }
-
-    public void setJobOwner(int jobOwner) {
-        this.jobOwner = jobOwner;
     }
 
     public int getFactotum() {

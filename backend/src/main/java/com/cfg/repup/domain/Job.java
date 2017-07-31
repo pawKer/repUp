@@ -1,6 +1,7 @@
 package com.cfg.repup.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class Job {
 
@@ -11,10 +12,40 @@ public class Job {
     private int job_owner;
     private int likes;
     private int expected_duration;
+    private String category;
+    private String charity;
+
+    public User getJob_owner_User() {
+        return job_owner_User;
+    }
+
+    public void setJob_owner_User(User job_owner_User) {
+        this.job_owner_User = job_owner_User;
+    }
+
+    private User job_owner_User;
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getCharity() {
+        return charity;
+    }
+
+    public void setCharity(String charity) {
+        this.charity = charity;
+    }
 
     private Job(){};
 
-    public Job(String title, String description, Date datePosted, String remuneration, int job_owner, int likes, int expected_duration) {
+    public Job(String title, String description, Date datePosted, String remuneration,
+               int job_owner, int likes, int expected_duration, String category, String charity,
+               User user) {
         this.title = title;
         this.description = description;
         this.datePosted = datePosted;
@@ -22,7 +53,9 @@ public class Job {
         this.job_owner = job_owner;
         this.likes = likes;
         this.expected_duration = expected_duration;
-
+        this.category=category;
+        this.charity=charity;
+        this.job_owner_User=user;
     }
 
     public String getTitle() {

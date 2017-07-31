@@ -8,4 +8,7 @@ People who are looking for work to be done can post jobs to the platform, which 
 
 The diagram shows the software architecture of the project:
 
-![alt text](https://raw.githubusercontent.com/pawKer/repUp/master/codeforgoodarchitecture.png)
+<div style="text-align:center; margin: auto;">
+<img src="codeforgoodarchitecture.png" width="60%" style="text-align:center; margin: auto;"/>
+</div>
+[Architecture Diagram](codeforgoodarchitecture.png)

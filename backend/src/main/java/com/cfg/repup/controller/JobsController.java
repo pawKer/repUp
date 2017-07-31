@@ -50,10 +50,7 @@ public class JobsController {
             @RequestHeader(value="userId") @NotNull final int userId){
 
     }
-
-
-
-    //TODO:apply for job
+    
     @PostMapping("/{jobId}/apply")
     public void applyForJob(
             @PathVariable final int jobId,

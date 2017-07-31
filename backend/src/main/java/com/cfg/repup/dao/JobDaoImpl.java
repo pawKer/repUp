@@ -93,14 +93,14 @@ public class JobDaoImpl implements JobDao {
     @Override
     public void assignJob(final int jobId, final int userId) {
         jdbcTemplate.update(
-                "INSERT INTO job_assignments(job_id, factotum, complete, rating" +
-                        "VALUES(?, ?, ?, ?, ?)", new PreparedStatementSetter() {
+                "INSERT INTO job_assignments(job_id, factotum, complete, rating) " +
+                        "VALUES(?, ?, ?, ?)", new PreparedStatementSetter() {
                     @Override
                     public void setValues(PreparedStatement preparedStatement) throws SQLException {
                         preparedStatement.setInt(1, jobId);
-                        preparedStatement.setInt(3, userId);
-                        preparedStatement.setBoolean(4, false);
-                        preparedStatement.setInt(5, 0);
+                        preparedStatement.setInt(2, userId);
+                        preparedStatement.setBoolean(3, false);
+                        preparedStatement.setInt(4, 0);
                     }});
     }
 }

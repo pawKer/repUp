@@ -9,6 +9,6 @@ public interface JobAssignmentDao {
     List<JobAssignment> getData();
     String getUsername(int id);
     String getJobTitle(int id);
-    boolean getJobComplete(int id);
-    int getJobRating(int id);
+    boolean getJobComplete(int job_id, int user_id);
+    int getJobRating(int job_id, int user_id);
 }

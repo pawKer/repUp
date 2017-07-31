@@ -23,7 +23,7 @@ public class JobDaoImpl implements JobDao {
     }
 
     public Job getJob(int jobId) {
-        return jdbcTemplate.queryForObject("SELECT TOP 1 * FROM jobs WHERE job_id=?", new RowMapper<Job>() {
+        return jdbcTemplate.queryForObject("SELECT * FROM jobs WHERE job_id=?", new RowMapper<Job>() {
             @Override
             public Job mapRow(ResultSet resultSet, int i) throws SQLException {
                 Job job = new Job(resultSet.getString("title"),

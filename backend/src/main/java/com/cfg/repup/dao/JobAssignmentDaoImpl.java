@@ -55,26 +55,26 @@ public class JobAssignmentDaoImpl implements JobAssignmentDao{
                 return name;
             }
         }, id);
-    	
+
     }
 
     @Override
-    public boolean getJobComplete(int id) {
-        return jdbcTemplate.queryForObject("SELECT complete FROM job_assignments WHERE job_id=?", new RowMapper<Boolean>() {
+    public boolean getJobComplete(int job_id, int user_id) {
+        return jdbcTemplate.queryForObject("SELECT complete FROM job_assignments WHERE job_id=? AND factotum=? LIMIT 1", new RowMapper<Boolean>() {
             @Override
             public Boolean mapRow(ResultSet resultSet, int i) throws SQLException {
                 return resultSet.getBoolean(1);
             }
-        }, id);
+        }, job_id, user_id);
     }
 
     @Override
-    public int getJobRating(int id) {
-        return jdbcTemplate.queryForObject("SELECT rating FROM job_assignments WHERE job_id=?", new RowMapper<Integer>() {
+    public int getJobRating(int id, int user_id) {
+        return jdbcTemplate.queryForObject("SELECT rating FROM job_assignments WHERE job_id=? AND factotum=? LIMIT 1", new RowMapper<Integer>() {
             @Override
             public Integer mapRow(ResultSet resultSet, int i) throws SQLException {
                 return resultSet.getInt(1);
             }
-        }, id);
+        }, id, user_id);
     }
 }

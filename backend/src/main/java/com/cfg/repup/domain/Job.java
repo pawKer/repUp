@@ -1,6 +1,7 @@
 package com.cfg.repup.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class Job {
 
@@ -11,6 +12,8 @@ public class Job {
     private int job_owner;
     private int likes;
     private int expected_duration;
+    private List category;
+    private List charity;
 
     private Job(){};
 

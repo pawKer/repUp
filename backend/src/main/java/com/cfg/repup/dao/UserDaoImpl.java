@@ -61,7 +61,7 @@ public class UserDaoImpl implements UserDao{
     @Override
     public void createUser(final User newUser) {
         jdbcTemplate.update(
-                "INSERT INTO jobs (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)" +
+                "INSERT INTO users (user_name, first_name, last_name, mobile_number, card_number, user_rating, path_to_profile_photo)" +
                         "VALUES(?,?,?,?,?,?,?)", new PreparedStatementSetter() {
                     @Override
                     public void setValues(PreparedStatement preparedStatement) throws SQLException {

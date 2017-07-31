@@ -25,7 +25,6 @@ public class JobAssignmentDaoImpl implements JobAssignmentDao{
             public JobAssignment mapRow(ResultSet resultSet, int i) throws SQLException {
                 JobAssignment job = new JobAssignment(
                 		resultSet.getInt("job_id"),
-                        resultSet.getInt("job_owner"),
                         resultSet.getInt("factotum"),
                         resultSet.getBoolean("complete"),
                         resultSet.getInt("rating"));

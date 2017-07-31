@@ -35,7 +35,8 @@ public class JobDaoImpl implements JobDao {
                         resultSet.getInt("expected_duration"),
                         resultSet.getString("categories"),
                         resultSet.getString("charities"),
-                        null);
+                        null,
+                        resultSet.getInt("job_id"));
                 return job;
             }
         }, jobId);
@@ -65,7 +66,8 @@ public class JobDaoImpl implements JobDao {
                         resultSet.getInt("expected_duration"),
                         resultSet.getString("categories"),
                         resultSet.getString("charities"),
-                        user);
+                        user,
+                        resultSet.getInt("job_id"));
                 return job;
             }
         });

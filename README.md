@@ -11,4 +11,3 @@ The diagram shows the software architecture of the project:
 <div style="text-align:center; margin: auto;">
 <img src="codeforgoodarchitecture.png" width="60%" style="text-align:center; margin: auto;"/>
 </div>
-[Architecture Diagram](codeforgoodarchitecture.png)

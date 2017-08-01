@@ -44,6 +44,7 @@ export class PostAJobPage {
           closeButtonText: 'Ok'
         });
         toast.present();
+        
       }
     );
   }

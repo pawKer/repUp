@@ -11,6 +11,14 @@ import { PostAJobPage } from '../pages/post_a_job/post_a_job';
 import { HttpModule } from '@angular/http';
 import { JobDetailsPage } from '../pages/job_details/job_details';
 import { Application } from '../pages/find_a_job/application';
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': 'eb36de4d'
+  }
+};
+
 
 @NgModule({
   declarations: [
@@ -24,7 +32,8 @@ import { Application } from '../pages/find_a_job/application';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    CloudModule.forRoot(cloudSettings),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

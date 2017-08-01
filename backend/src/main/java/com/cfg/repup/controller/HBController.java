@@ -51,8 +51,8 @@ public class HBController {
 			Tracking trackingObject = new Tracking(
 					userDao.getUser(job.getFactotum()).getUser_name(),
 					userDao.getUserProfilePhoto(job.getFactotum()),
-					jobAssignmentDao.getJobComplete(job.getJob_id()),
-					jobAssignmentDao.getJobRating(job.getJob_id()),
+					jobAssignmentDao.getJobComplete(job.getJob_id(), job.getFactotum()),
+					jobAssignmentDao.getJobRating(job.getJob_id(), job.getFactotum()),
 					jobDao.getJob(job.getJob_id()).getTitle());
 
 			trackingList.add(trackingObject);
